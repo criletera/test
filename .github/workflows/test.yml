@@ -1,0 +1,17 @@
+name: Hello World Workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+      - 'release-*'
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest # Run on a GitHub-hosted Ubuntu runner
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4 # Action to check out your repository code
+
+      - name: Say Hello
+        run: echo "Hello, GitHub Actions!" # Run a simple shell command
